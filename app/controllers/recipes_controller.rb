@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
 
     def show
         recipes = Ingredient.find_by(name: params[:ingredient_name]).recipes
-        render RecipeSerializer.new(recipes.sample)
+        render json: RecipeSerializer.new(recipes.sample)
     end
 
     def create
